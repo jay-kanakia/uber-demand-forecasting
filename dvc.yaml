@@ -32,3 +32,13 @@ stages:
     outs:
     - ./models/encoder.joblib
     - ./models/model.joblib
+  evaluate_and_register_model:
+    cmd: python ./src/models/evaluate_and_register_model.py
+    deps:
+    - ./data/processed/test_df.csv
+    - ./data/processed/train_df.csv
+    - ./models/encoder.joblib
+    - ./models/model.joblib
+    - ./src/models/evaluate_and_register_model.py
+    outs:
+    - ./run_info.json

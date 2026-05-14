@@ -64,7 +64,7 @@ def model_training(train_df,encoder):
     lr = LinearRegression()
 
     # train the model
-    lr.fit(X_train,y_train)
+    lr.fit(X_train_encoded,y_train)
 
     return lr
 
